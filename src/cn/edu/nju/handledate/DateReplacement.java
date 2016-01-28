@@ -101,7 +101,8 @@ public class DateReplacement implements Runnable {
 	 * @return      
 	*/
 	public static void readTable(Range range) {
-
+		if(range==null)
+			return ;
 		TableIterator tableIterator = new TableIterator(range); //获取表格
 		Table table;
 		TableRow row;
@@ -131,6 +132,8 @@ public class DateReplacement implements Runnable {
 	 * @return      
 	*/
 	public static String replaceYear(String str) {
+		if(str==null||str.length()<=0)
+			return null;
 		String[] arr = str.split("[\\.-]+");
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < arr.length; i++) {
